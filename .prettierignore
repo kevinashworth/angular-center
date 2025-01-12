@@ -1,0 +1,10 @@
+.eslintrc
+bitbucket-pipelines.yml
+coverage/
+dist/
+node_modules/
+public/mockServiceWorker.js
+public/cognito_client_id.json
+public/cognito_user_pool.json
+public/sentrydsn.json
+public/version.json

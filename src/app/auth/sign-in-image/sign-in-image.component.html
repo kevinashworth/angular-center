@@ -1,0 +1,9 @@
+@if (showSignInImage) {
+  <img
+    alt=""
+    class="h-screen object-cover"
+    @showSignInImageTrigger
+    [src]="signInImages[signInImageIndex]"
+    (error)="handleError()"
+  />
+}
