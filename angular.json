@@ -27,7 +27,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/mockServiceWorker.js"
             ],
             "styles": ["src/styles.css"],
             "scripts": []
@@ -94,5 +95,12 @@
         }
       }
     }
+  },
+  "cli": {
+    "cache": {
+      "enabled": true,
+      "path": "/Volumes/Xavier/angular-cache"
+    },
+    "analytics": false
   }
 }

@@ -2,21 +2,23 @@
   <h4 class="py-0 font-bold uppercase tracking-widest text-vibrant">Welcome Home!</h4>
   <p class="py-0 pb-4 text-xl font-medium italic">Come on in. We just started dinner.</p>
   <p class="py-2 text-sm">Sign in using your email address</p>
-  <form class="flex w-full flex-col items-center gap-2">
+  <form (ngSubmit)="onLogin()" class="flex w-full flex-col items-center gap-2">
     <input
       autoComplete="username"
       class="d-input d-input-bordered w-full max-w-xs"
       id="email"
+      name="email"
       placeholder="Business Email"
       type="email"
-    />
+      [(ngModel)]="email" />
     <input
       autoComplete="current-password"
       class="d-input d-input-bordered w-full max-w-xs"
       id="password"
+      name="password"
       placeholder="Password"
       type="password"
-    />
+      [(ngModel)]="password" />
     <button class="w-full max-w-xs rounded-md bg-vibrant px-4 py-2 text-white" id="signin" type="button">
       Sign in
     </button>
@@ -33,7 +35,8 @@
   </p>
   <p class="pb-1 text-sm text-gray-300">
     Forgot password? We
-    <a routerLink="/reset" class="text-vibrant underline">got you</a>.
+    <a routerLink="/reset" class="text-vibrant underline">got you</a>
+    .
   </p>
   @if (signInBypass) {
     <button class="mt-16 bg-light px-4 py-2 text-xs text-black" (click)="bypassLogin()">Bypass Login (dev)</button>

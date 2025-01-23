@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, HeaderComponent, RouterLink, RouterLinkActive, RouterOutlet],
-  templateUrl: './app.component.html'
+  imports: [CommonModule, RouterOutlet],
+  templateUrl: './app.component.html',
+  host: { 'aria-label': 'App Root Component' }
 })
 export class AppComponent {
   title = 'angular-center';

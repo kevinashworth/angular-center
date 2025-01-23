@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply leading-none tracking-normal;
+  }
+  p {
+    @apply pb-4 pt-0;
+  }
+}
+
+@layer components {
+  /* experimenting with smoothshadows.com */
+  img.smooth-shadow-sm {
+    box-shadow:
+      0px 1px 1px rgba(57, 57, 57, 0.2),
+      0px 2px 3px rgba(57, 57, 57, 0.2);
+  }
+  img.smooth-shadow-md {
+    box-shadow:
+      0px 1px 1px rgba(57, 57, 57, 0.2),
+      0px 2px 3px rgba(57, 57, 57, 0.2),
+      0px 5px 7px rgba(57, 57, 57, 0.2);
+  }
+
+  .gotu-input {
+    @apply w-full border-b-[1px] border-b-black p-1 text-xs text-gray-900;
+  }
+  .gotu-input-primary {
+    @apply w-full rounded-md border border-primary border-opacity-40 p-1 text-xs text-gray-900;
+  }
+  .gotu-input-primary:focus {
+    @apply border-transparent border-b-primary;
+  }
+  .gotu-input-primary.gotu-input-error {
+    @apply border-error;
+  }
+}
+
+h1.text-xxl {
+  font-size: 7.5rem;
+  font-weight: 700;
+}
+
+div {
+  display: block;
+}

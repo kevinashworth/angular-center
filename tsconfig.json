@@ -3,6 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./src/",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "importHelpers": true,
@@ -15,7 +16,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "outDir": "./dist/out-tsc",
     "paths": {
-      "~/*": ["./src/app/*"]
+      "~/*": ["app/*"]
     },
     "skipLibCheck": true,
     "strict": true,

@@ -1,0 +1,81 @@
+<div class="">
+  <div class="mx-8 flex flex-row items-center justify-between gap-8">
+    <div class="relative w-96">
+      <span class="absolute left-2 top-4">
+        <ng-icon name="heroMagnifyingGlassSolid" size="28px"></ng-icon>
+      </span>
+      <input
+        class="form-input my-2 w-full rounded-full border-transparent py-2 pl-10 focus:border-white focus:ring-0"
+        name="filterText"
+        placeholder="Search or Filter"
+        type="text"
+        [(ngModel)]="filterText" />
+      @if (filterText()) {
+        <button (click)="handleFilterTextClear()" class="absolute right-2 top-4 text-gray-400 hover:text-vibrant">
+          <ng-icon name="heroXMarkSolid" size="24px"></ng-icon>
+        </button>
+      }
+    </div>
+    @if (!filterText()) {
+      <div class="text-base">{{ pluralizedCustomers() }}</div>
+    }
+  </div>
+
+  <div class="bg-white">
+    <table class="w-full table-fixed border-collapse">
+      <thead>
+        @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
+          <tr>
+            @for (header of headerGroup.headers; track header.id) {
+              @if (!header.isPlaceholder) {
+                <th class="cursor-pointer select-none" (click)="header.column.toggleSorting()">
+                  <ng-container *flexRender="header.column.columnDef.header; props: header.getContext(); let header">
+                    {{ header }}
+                  </ng-container>
+                  @if (header.column.getIsSorted() === "asc") {
+                    ↑
+                  }
+                  @if (header.column.getIsSorted() === "desc") {
+                    ↓
+                  }
+                </th>
+              }
+            }
+          </tr>
+        }
+      </thead>
+    </table>
+  </div>
+
+  <div class="bg-white">
+    @switch (customersQuery.status()) {
+      @case ("pending") {
+        <div class="flex items-center justify-center p-4">
+          <image-spin></image-spin>
+        </div>
+      }
+      @case ("error") {
+        <div class="flex items-center justify-center p-4">
+          <p class="text-sm text-error">Error: {{ customersQuery.error()?.message }}</p>
+        </div>
+      }
+      @default {
+        <table class="mb-12 w-full table-fixed border-collapse">
+          <tbody>
+            @for (row of table.getRowModel().rows; track row.id) {
+              <tr>
+                @for (cell of row.getVisibleCells(); track cell.id) {
+                  <td>
+                    <ng-container *flexRender="cell.column.columnDef.cell; props: cell.getContext(); let cell">
+                      <div [innerHTML]="cell"></div>
+                    </ng-container>
+                  </td>
+                }
+              </tr>
+            }
+          </tbody>
+        </table>
+      }
+    }
+  </div>
+</div>

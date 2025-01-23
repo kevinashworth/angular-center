@@ -1,0 +1,21 @@
+<header>
+  <div class="flex flex-row justify-between">
+    <div class="flex flex-col">
+      <h1 class="text-[2rem] font-bold uppercase tracking-wide">{{ data.name }}</h1>
+      <h2 class="text-[1.5rem] font-semibold uppercase tracking-wide">
+        <div class="flex flex-row gap-2">
+          <ng-icon name="heroMapPinSolid"></ng-icon>
+          {{ data.address1 }} {{ data.city }}
+        </div>
+      </h2>
+      <h3 class="text-[1.5rem] font-semibold uppercase tracking-wide">
+        <app-display-the-get-tokens></app-display-the-get-tokens>
+      </h3>
+    </div>
+    <div class="flex flex-col items-end">
+      <h6 class="text-[1.5rem] font-medium text-token">Beta</h6>
+      <h4 class="font-semibold tracking-wide text-vibrant">{{ title() }}</h4>
+      <h5 class="font-semibold tracking-wide text-vibrant">{{ subtitle() }}</h5>
+    </div>
+  </div>
+</header>

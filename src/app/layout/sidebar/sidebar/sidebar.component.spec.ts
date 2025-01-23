@@ -27,6 +27,6 @@ describe('SidebarComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     const links = compiled.querySelectorAll('a');
-    expect(links.length).toBe(5); // Adjust this number based on your actual number of links
+    expect(links.length).toBe(6); // Adjust this number based on your actual number of links
   });
 });

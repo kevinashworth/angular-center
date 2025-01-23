@@ -1,13 +1,45 @@
-<div class="flex-shrink flex-grow-0 bg-vibrant" aria-label="Sidebar Navigation Menu">
-  <div class="sticky top-0 flex h-screen translate-x-0 flex-col overflow-y-auto bg-vibrant px-3 py-4">
-    <nav>
-      <ul class="mt-2 space-y-3">
-        <sidebar-item-upper path="/dashboard" icon="dashboard">Dashboard</sidebar-item-upper>
-        <sidebar-item-upper path="/customers" icon="customers">Customers</sidebar-item-upper>
-        <sidebar-item-upper path="/campaigns" icon="campaign">Campaigns</sidebar-item-upper>
-        <sidebar-item-upper path="/profile" icon="profile">Profile</sidebar-item-upper>
-        <sidebar-item-upper path="/settings" icon="settings">Settings</sidebar-item-upper>
-      </ul>
-    </nav>
+<div class="sticky top-0 flex h-screen translate-x-0 flex-col overflow-y-auto bg-vibrant px-3 py-4">
+  <a routerLink="/dashboard" class="my-4 flex items-center">
+    <image-got-you-your-business />
+  </a>
+  <nav>
+    <ul>
+      <sidebar-item-upper path="/dashboard" icon="dashboard">Dashboard</sidebar-item-upper>
+      <sidebar-item-upper path="/customers" icon="customers">Customers</sidebar-item-upper>
+      <sidebar-item-upper path="/campaigns" icon="campaign">Campaigns</sidebar-item-upper>
+      <sidebar-item-upper path="/profile" icon="profile">Profile</sidebar-item-upper>
+    </ul>
+    <div class="m-3 border-t border-vista"></div>
+    <ul class="mt-2 space-y-3">
+      <li>
+        <a class="flex items-center rounded-lg p-2 font-normal text-gray-200" href="/notifications">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+            data-slot="icon"
+            class="h-6 w-6 shrink-0">
+            <path
+              fill-rule="evenodd"
+              d="M5.25 9a6.75 6.75 0 0 1 13.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 0 1-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 1 1-7.48 0 24.585 24.585 0 0 1-4.831-1.244.75.75 0 0 1-.298-1.205A8.217 8.217 0 0 0 5.25 9.75V9Zm4.502 8.9a2.25 2.25 0 1 0 4.496 0 25.057 25.057 0 0 1-4.496 0Z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="mx-3 text-xs uppercase">Notifications</span>
+          <div
+            class="flex h-3 w-3 items-center justify-center rounded-[50%] bg-orange p-3 text-sm font-medium text-white">
+            <span class="translate-y-[1px]">8</span>
+          </div>
+        </a>
+      </li>
+      <sidebar-item-lower-button icon="settings">Settings</sidebar-item-lower-button>
+      @if (isAuthenticated) {
+        <sidebar-item-lower-button icon="signout">Sign Out</sidebar-item-lower-button>
+      }
+    </ul>
+  </nav>
+  <div class="flex-grow"></div>
+  <div class="my-3 px-3">
+    <div class="text-[0.625rem] font-light text-gray-200">v 0.21.1</div>
   </div>
 </div>
