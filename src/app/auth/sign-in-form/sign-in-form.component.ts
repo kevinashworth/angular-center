@@ -18,7 +18,7 @@ export class SignInFormComponent {
 
   onLogin() {
     if (this.authService.signin(this.email, this.password)) {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/customers']);
     } else {
       alert('Invalid credentials');
     }
