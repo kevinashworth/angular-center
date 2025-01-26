@@ -121,12 +121,7 @@ export class CustomersTableComponent {
     getRowId: (row) => row.uuid,
     getSortedRowModel: getSortedRowModel(),
     initialState: {
-      sorting: [
-        {
-          id: 'actions',
-          desc: true
-        }
-      ]
+      sorting: []
     },
     state: { globalFilter: this.filterText() }
   }));

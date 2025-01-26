@@ -21,7 +21,7 @@ export class AuthService {
     const isAuthenticated = !!token;
     this.isAuthenticatedSubject = new BehaviorSubject<boolean>(isAuthenticated);
     this.isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
-    console.log('AuthService constructor', { isAuthenticated });
+    // console.log('AuthService constructor', { isAuthenticated });
   }
 
   signin(username: string, password: string): boolean {
